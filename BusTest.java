@@ -21,12 +21,19 @@ public void addPassengersToBus(){
   this.bus.addPassenger(this.passengers);
       assertEquals(1,this.bus.passengerCount());
     }
-@Test
+ @Test
  public void cannotAddPassengers(){
    for(int i = 0; i< 15; i++){
       this.bus.addPassenger(passengers);
    }
     assertEquals(10, this.bus.passengerCount());
+ }
+ @Test
+ public void passengersAreFull(){
+   for(int i =0; i < 15; i++){
+     this.bus.addPassenger(this.passengers);
+   }
+   assertEquals( true, this.bus.isBusFull());
  }
 
 }
